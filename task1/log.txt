@@ -1,0 +1,11 @@
+commit 408d1d6d99880a3a2cc04ae4917e89049b13cb79
+Author: Uladzimir Burdyka <Vladimirb.by@gmail.com>
+Date:   Wed Jun 9 11:23:48 2021 +0300
+
+    add status.txt to git
+
+commit 24c15ee9fe8bf9083517c1ff11667502503a7044
+Author: Uladzimir Burdyka <Vladimirb.by@gmail.com>
+Date:   Wed Jun 9 11:18:37 2021 +0300
+
+    add .gitignore
