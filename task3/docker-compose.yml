@@ -1,0 +1,24 @@
+version: '3'
+services:
+  db:
+    image: postgres:11.4-alpine
+    container_name: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - ./pg_data:/var/lib/postgresql/data/pgdata
+    environment:
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: docker_test
+      PGDATA: /var/lib/postgresql/data/pgdata
+    restart: always
+  nginx:
+    image: vladmin:v3
+    container_name: nginx
+    ports:
+      - 8080:80
+  java:
+    image: tomcat:latest
+    container_name: java
+    ports:
+      - 8090:8080
