@@ -1,5 +1,8 @@
 version: '3'
 services:
+  Hello:
+    image: hello-world
+    container_name: hello-world
   db:
     image: postgres:11.4-alpine
     container_name: postgres
