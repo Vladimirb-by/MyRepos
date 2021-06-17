@@ -25,3 +25,5 @@ services:
     container_name: java
     ports:
       - 8090:8080
+    links:
+      - db
