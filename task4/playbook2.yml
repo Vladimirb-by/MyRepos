@@ -1,0 +1,28 @@
+ Install docker
+---
+- name: "Install docker"
+  hosts: all
+  become: yes
+  tasks:
+    - name: Update packages
+      yum:
+        name: '*'
+        state: latest
+        update_only: yes
+
+    - name: check packages
+      yum:
+        name: "{{ packages }}"
+        state: latest
+        update_cache: yes
+      vars:
+        packages:
+        - amazon-linux-extras
+
+    - name: Install
+      shell: "amazon-linux-extras install docker=latest -y"
+
+    - name: Docker startup
+      service:
+        name: docker
+        state: started

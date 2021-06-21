@@ -1,0 +1,14 @@
+
+[sandbox]
+linux1 ansible_host=172.31.26.185
+
+[prod]
+linux2 ansible_host=172.31.17.24
+
+[server_ALL:children]
+sandbox
+prod
+
+[server_ALL:vars]
+ansible_user=ec2-user
+ansible_ssh_private_key_file=/home/ec2-user/.ssh/vladmin.
