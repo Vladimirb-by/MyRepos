@@ -1,0 +1,1 @@
+INSERT INTO "public"."result" ("id","studentid","task1","task2","task3","task4") VALUES ('4','4','TRUE','TRUE','TRUE','TRUE');
