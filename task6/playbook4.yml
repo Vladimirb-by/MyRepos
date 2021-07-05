@@ -1,0 +1,36 @@
+# Install docker_postgresql
+---
+- name: "Install docker"
+  hosts: db2
+  become: yes
+  tasks:
+    - name: Update packages
+      yum:
+        name: '*'
+        state: latest
+        update_only: yes
+
+    - name: check packages
+      yum:
+        name: "{{ packages }}"
+        state: latest
+        update_cache: yes
+      vars:
+        packages:
+        - amazon-linux-extras
+
+    - name: Install
+      shell: "amazon-linux-extras install docker=latest -y"
+
+    - name: Docker startup
+      service:
+        name: docker
+        state: started
+
+    - name: Postgresql
+      shell: "sudo docker pull postgres"
+
+    - name: Start
+      shell: "sudo docker run -d --name some-postgres -p 5432:5432 -e POSTGRES_PASSWORD=$POSTGRES_PW  -e PGDATA=/var/lib/postgresql/data/pgdata -v /custom/mount:/var/lib/postgresql/data  postgres"
+      environment:
+          POSTGRES_PW: "{{ MYSECRET }}”
