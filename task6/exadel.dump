@@ -1,0 +1,173 @@
+PGDM!yexadel13.3 (Debian 13.3-1.pgdg100+1)13.3 (Debian 13.3-1.pgdg100+1)�
+                                                                         0ENCODINENCODINGSET client_encoding = 'UTF8';
+false�
+      00
+STDSTRINGS
+STDSTRINGS(SET standard_conforming_strings = 'on';
+false�
+      00
+SEARCHPATH
+SEARCHPATH8SELECT pg_catalog.set_config('search_path', '', false);
+false�
+      126216384exadeDATABASEZCREATE DATABASE exadel WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE = 'en_US.utf8';
+DROP DATABASE exadel;
+postgresfalse�125916385resultTABLE�CREATE TABLE public.result (
+    id bigint NOT NULL,
+    studentid integer NOT NULL,
+    task1 boolean,
+    task2 boolean,
+    task3 boolean,
+    task4 boolean
+);
+�DROP TABLE public.result;
+result_id_seSEQUENCEvCREATE SEQUENCE public.result_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+$DROP SEQUENCE public.result_id_seq;
+publipostgresfalse200�
+result_id_seqSEQUENCE OWNED BY?ALTER SEQUENCE public.result_id_seq OWNED BY public.result.id;
+publipostgresfalse201�12591639studentsTABLE�CREATE TABLE public.students (
+    id bigint NOT NULL,
+    student character varying(50) NOT NULL,
+    studentid integer NOT NULL
+);
+DROP TABLE public.students;
+publicheapostgresfalse�125916393students_id_seSEQUENCExCREATE SEQUENCE public.students_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+&DROP SEQUENCE public.students_id_seq;
+publipostgresfalse202�
+                      00students_id_seqSEQUENCE OWNED BYCALTER SEQUENCE public.students_id_seq OWNED BY public.students.id;
+publipostgresfalse203�
+260416395	result idDEFAULTfALTER TABLE ONLY public.result ALTER COLUMN id SET DEFAULT nextval('public.result_id_seq'::regclass);
+8ALTER TABLE public.result ALTER COLUMN id DROP DEFAULT;
+publipostgresfalse201200�
+260416396
+         students idDEFAULTjALTER TABLE ONLY public.students ALTER COLUMN id SET DEFAULT nextval('public.students_id_seq'::regclass);
+:ALTER TABLE public.students ALTER COLUMN id DROP DEFAULT;
+publipostgresfalse203202�
+                         016385result
+TABLE DATAKCOPY public.result (id, studentid, task1, task2, task3, task4) FROM stdin;
+publipostgresfalse200G�
+                       01639students
+TABLE DATA:COPY public.students (id, student, studentid) FROM stdin;
+publipostgresfalse202��
+result_id_seq          00
+             SEQUENCE SET<SELECT pg_catalog.setval('public.result_id_seq', 1, false);
+publipostgresfalse201�
+                      00students_id_seq
+                                       SEQUENCE SET>SELECT pg_catalog.setval('public.students_id_seq', 1, false);
+publipostgresfalse203�
+260616398result result_pkey
+CONSTRAINTPALTER TABLE ONLY public.result
+    ADD CONSTRAINT result_pkey PRIMARY KEY (id);
+<ALTER TABLE ONLY public.result DROP CONSTRAINT result_pkey;
+publipostgresfalse200�
+260616400esult result_studentid_key
+CONSTRAINT[ALTER TABLE ONLY public.result
+    ADD CONSTRAINT result_studentid_key UNIQUE (studentid);
+EALTER TABLE ONLY public.result DROP CONSTRAINT result_studentid_key;
+publipostgresfalse200
+                     260616402students students_pkey
+CONSTRAINTTALTER TABLE ONLY public.students
+    ADD CONSTRAINT students_pkey PRIMARY KEY (id);
+root@81ba6e177504:/# vi exadel.dump
+bash: vi: command not found
+root@81ba6e177504:/# cat exadel.dump
+PGDM!yexadel13.3 (Debian 13.3-1.pgdg100+1)13.3 (Debian 13.3-1.pgdg100+1)�
+                                                                         0ENCODINENCODINGSET client_encoding = 'UTF8';
+false�
+      00
+STDSTRINGS
+STDSTRINGS(SET standard_conforming_strings = 'on';
+false�
+      00
+SEARCHPATH
+SEARCHPATH8SELECT pg_catalog.set_config('search_path', '', false);
+false�
+      126216384exadeDATABASEZCREATE DATABASE exadel WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE = 'en_US.utf8';
+DROP DATABASE exadel;
+postgresfalse�125916385resultTABLE�CREATE TABLE public.result (
+    id bigint NOT NULL,
+    studentid integer NOT NULL,
+    task1 boolean,
+    task2 boolean,
+    task3 boolean,
+    task4 boolean
+);
+�DROP TABLE public.result;
+result_id_seSEQUENCEvCREATE SEQUENCE public.result_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+$DROP SEQUENCE public.result_id_seq;
+publipostgresfalse200�
+result_id_seqSEQUENCE OWNED BY?ALTER SEQUENCE public.result_id_seq OWNED BY public.result.id;
+publipostgresfalse201�12591639studentsTABLE�CREATE TABLE public.students (
+    id bigint NOT NULL,
+    student character varying(50) NOT NULL,
+    studentid integer NOT NULL
+);
+DROP TABLE public.students;
+publicheapostgresfalse�125916393students_id_seSEQUENCExCREATE SEQUENCE public.students_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+&DROP SEQUENCE public.students_id_seq;
+publipostgresfalse202�
+                      00students_id_seqSEQUENCE OWNED BYCALTER SEQUENCE public.students_id_seq OWNED BY public.students.id;
+publipostgresfalse203�
+260416395	result idDEFAULTfALTER TABLE ONLY public.result ALTER COLUMN id SET DEFAULT nextval('public.result_id_seq'::regclass);
+8ALTER TABLE public.result ALTER COLUMN id DROP DEFAULT;
+publipostgresfalse201200�
+260416396
+         students idDEFAULTjALTER TABLE ONLY public.students ALTER COLUMN id SET DEFAULT nextval('public.students_id_seq'::regclass);
+:ALTER TABLE public.students ALTER COLUMN id DROP DEFAULT;
+publipostgresfalse203202�
+                         016385result
+TABLE DATAKCOPY public.result (id, studentid, task1, task2, task3, task4) FROM stdin;
+publipostgresfalse200G�
+                       01639students
+TABLE DATA:COPY public.students (id, student, studentid) FROM stdin;
+publipostgresfalse202��
+result_id_seq          00
+             SEQUENCE SET<SELECT pg_catalog.setval('public.result_id_seq', 1, false);
+publipostgresfalse201�
+                      00students_id_seq
+                                       SEQUENCE SET>SELECT pg_catalog.setval('public.students_id_seq', 1, false);
+publipostgresfalse203�
+260616398result result_pkey
+CONSTRAINTPALTER TABLE ONLY public.result
+    ADD CONSTRAINT result_pkey PRIMARY KEY (id);
+<ALTER TABLE ONLY public.result DROP CONSTRAINT result_pkey;
+publipostgresfalse200�
+260616400esult result_studentid_key
+CONSTRAINT[ALTER TABLE ONLY public.result
+    ADD CONSTRAINT result_studentid_key UNIQUE (studentid);
+EALTER TABLE ONLY public.result DROP CONSTRAINT result_studentid_key;
+publipostgresfalse200
+                     260616402students students_pkey
+CONSTRAINTTALTER TABLE ONLY public.students
+    ADD CONSTRAINT students_pkey PRIMARY KEY (id);
+@ALTER TABLE ONLY public.students DROP CONSTRAINT students_pkey;
+publipostgresfalse202
+                     260616404students students_studentid_key
+CONSTRAINT_ALTER TABLE ONLY public.students
+    ADD CONSTRAINT students_studentid_key UNIQUE (studentid);
+IALTER TABLE ONLY public.students DROP CONSTRAINT students_studentid_key;
+publipostgresfalse202�
+                      0x�3�4�,�@.#N#�4 +�3�˘��b.N��SNS8;F���
+                                                            �V
+                                                              ��
+�@��x���ɯn(Ɩ0 J�����ߎس@��|�m&\�y�[82�&f�4,<��q���AK�\           �x�5λ
+                                                     Ẋ{��;1Xc{f�y)�_^�=y3���Z���}��Z%�#�sz(U
