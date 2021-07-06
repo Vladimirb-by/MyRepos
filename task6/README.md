@@ -12,6 +12,7 @@ SELECT * FROM "public"."result" WHERE "studentid" = (SELECT "studentid" FROM "pu
 4. Сделайте dump базы данных, удалите существующую и восстановите из дампа.
 
 pg_dump -h ip-172-31-4-115.us-east-2.compute.internal -Fc -U postgres exadel > exadel.dump
+
 pg_restore --create --dbname=postgres  --verbose --no-acl --no-owner --host=ip-172-31-4-115.us-east-2.compute.internal --username=postgres exadel.dump
 
 5. Написать Ansible роль для развертывания SQL или noSQL базы данных. Креды не должны храниться в GitHub.
